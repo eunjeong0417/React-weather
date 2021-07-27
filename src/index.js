@@ -20,13 +20,12 @@ class App extends React.Component {
   }
 
   render() {
-
     if (this.state.errorMessage && !this.state.lat) {
        return <div>ErrorMessage: {this.state.errorMessage}</div>
     } else if (!this.state.errorMessage && this.state.lat) {
       return <SeasonDisplay lat={this.state.lat} />
     } else {
-      return <div>Loading...</div>
+      return <h1><i class="spinner loading icon"></i>Loading...</h1>
      }
   }
 }
