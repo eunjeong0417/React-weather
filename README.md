@@ -10,4 +10,5 @@ React study
 -geolocation api 로 latitude 정보 받아오기
 -semantic UI로 아이콘 넣기
 
-![image](https://user-images.githubusercontent.com/82692118/127145168-0bbde14a-fcce-4249-9b36-7f57ae04b209.png)
+![image](https://user-images.githubusercontent.com/82692118/127145432-9cffee2d-bd7a-4287-909b-ff26ab3484d6.png)
+
