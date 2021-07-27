@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import Loader from './Loader';
 import SeasonDisplay from './SeasonDisplay';
 
 class App extends React.Component {
@@ -15,18 +16,26 @@ class App extends React.Component {
     ); 
   }
 
+  renderContent() {
+      if (this.state.errorMessage && !this.state.lat) {
+       return <div>ErrorMessage: {this.state.errorMessage}</div>
+    } else if (!this.state.errorMessage && this.state.lat) {
+      return <SeasonDisplay lat={this.state.lat} />
+    } else {
+      return <Loader message="Please wait, Loading..." />
+     }
+  }
+
   componentDidUpdate() {
     console.log('My component was just updated');
   }
 
   render() {
-    if (this.state.errorMessage && !this.state.lat) {
-       return <div>ErrorMessage: {this.state.errorMessage}</div>
-    } else if (!this.state.errorMessage && this.state.lat) {
-      return <SeasonDisplay lat={this.state.lat} />
-    } else {
-      return <h1><i class="spinner loading icon"></i>Loading...</h1>
-     }
+    return (
+      <div className="border red">
+        {this.renderContent()}
+    </div>
+    );
   }
 }
 
